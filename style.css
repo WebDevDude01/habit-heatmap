@@ -68,10 +68,19 @@ button {
     border-radius: 10px;
     
 }
-#div1 {
+.div1 {
     width: 10px;
     height: 10px;
     border: 2px solid red;
     border-radius: 10px;
     
+}
+#streak-container, #streak-container1, #streak-container2, #streak-container3 {
+    display: flex;
+    width: 100%;
+}
+
+.streak-reset {
+    border-color: red;
+    background-color: black;
 }
