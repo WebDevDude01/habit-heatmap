@@ -106,6 +106,7 @@ document.getElementById("task3-button-incomplete").addEventListener("click", fun
         webDevStreak.children[i].style.backgroundColor = "black";
         webDevStreak.children[i].style.borderColor = "red";
         webDevCounter = -1;
+        
     }
 });
 
@@ -138,6 +139,8 @@ document.getElementById("task4-button-incomplete").addEventListener("click", fun
         task4Streak.children[i].style.backgroundColor = "black";
         task4Streak.children[i].style.borderColor = "red";
         task4Counter = -1;
+        localStorage.clear();
+
         
 
     } 
@@ -158,37 +161,66 @@ createStreak4();
 
 
 // =============Adding data to local storage==================
-// check to see if localStorage is empty or not
 
-    // for(let i = 0; i <= reloadTask; i++) {
-    //     task4Streak.children[i].style.backgroundColor = "greenyellow";
-    //     task4Streak.children[i].style.borderColor = "greenyellow";
-    // }
-
-let reloadTask = localStorage.getItem("Task4Storage");
-function reloadPage() {
-    if(reloadTask >= 1) {
-        for(let i = 0; i <= reloadTask; i++) {
+let reloadTask4 = localStorage.getItem("Task4Storage");
+let getWebDev = localStorage.getItem("webDevStorage");
+let getPushups = localStorage.getItem("pushupStorage");
+let getSmoking = localStorage.getItem("noSmokingCounterStorage");
+function reloadTask04() {
+    if(reloadTask4 >= 1) {
+        for(let i = 0; i <= reloadTask4; i++) {
             task4Streak.children[i].style.backgroundColor = "greenyellow";
             task4Streak.children[i].style.borderColor = "greenyellow";
-            console.log(reloadTask)
         }
-    } else{
-        console.log("something isn't working");
     }
 
-    task4Counter = reloadTask;
+    task4Counter = reloadTask4;
     console.log(`this should be your updated value ${task4Counter}`);
 
 }
 
+function reloadWebDev() {
+    if(getWebDev >= 1) {
+        for(let i = 0; i <= getWebDev; i++) {
+            webDevStreak.children[i].style.backgroundColor = "greenyellow";
+            webDevStreak.children[i].style.borderColor = "greenyellow";
 
-    // let reloadTask = localStorage.getItem("Task4Storage");
-    // console.log(reloadTask);
-    // for(let i = 0; i < reloadTask; i++) {
-    //     console.log(`hello world`)
-    // }
-reloadPage();
+        }
+    }
+    webDevCounter = getWebDev;
+
+}
+
+function reloadPushups() {
+    if(getPushups >= 1) {
+        for(let i = 0; i <= getPushups; i++) {
+            pushupStreak.children[i].style.backgroundColor = "greenyellow";
+            pushupStreak.children[i].style.borderColor = "greenyellow";
+
+        }
+    }
+    pushupCounter= getPushups;
+
+}
+
+function reloadSmoking() {
+    if(getSmoking >= 1) {
+        for(let i = 0; i <= getSmoking; i++) {
+            noSmokingStreak.children[i].style.backgroundColor = "greenyellow";
+            noSmokingStreak.children[i].style.borderColor = "greenyellow";
+
+        }
+    }
+    noSmokingCounter = getSmoking;
+
+}
+
+
+
+reloadTask04();
+reloadWebDev();
+reloadPushups()
+reloadSmoking()
 
 
 
